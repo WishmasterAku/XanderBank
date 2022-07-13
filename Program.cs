@@ -56,7 +56,38 @@ public class Customer
     }
     public static void Main(String[] args)
     {
+        void MainMenu()
+        {
+        System.Console.WriteLine("Welcome to Xander Bank");
+        System.Console.WriteLine("Please enter your customer number");
+        System.Console.WriteLine("Please select an option");
+        System.Console.WriteLine("1) Withdraw");
+        System.Console.WriteLine("2) Deposit");
+        System.Console.WriteLine("3) Show Balance");
+        System.Console.WriteLine("4) Sign off");
+        }
 
+        void Deposit(Customer currentuser, double newBalance)
+        {
+            System.Console.WriteLine("Please enter the amount you want to deposit");
+            double Deposit = Convert.ToDouble(Console.ReadLine());
+            currentuser.setBalance(Deposit + newBalance);
+            System.Console.WriteLine("Deposit Accepted. Your new balance is: " + currentuser.getBalance());   
+        }
+
+        void Withdraw(Customer currentuser, double newBalance)
+        {
+            System.Console.WriteLine("Please enter the amount you want to withdraw");
+            double Withdraw = Convert.ToDouble(Console.ReadLine());
+            currentuser.setBalance(newBalance - Withdraw);
+            System.Console.WriteLine("Your ending balance is: " + currentuser.getBalance());
+        }
+        void ShowBalance(Customer currentuser, double balance)
+        {
+            System.Console.WriteLine("Your current balance is: " + currentuser.getBalance());
+        }
+        
+        
     }
 
 }
